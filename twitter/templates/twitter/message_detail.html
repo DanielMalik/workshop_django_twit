@@ -1,0 +1,11 @@
+{% extends "twitter/base.html" %}
+{% block content %} 
+    <p>
+        from: <strong>{{ object.sender }}</strong>, to: <strong>{{ object.receiver }}</strong><br>
+        date: <strong>{{ object.creation_date}}</strong>
+    </p>
+    <h1>{{ object.content }}</h1>
+
+{% endblock %}
+
+{% block title %}message details{% endblock %}

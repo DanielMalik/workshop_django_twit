@@ -56,7 +56,7 @@ ROOT_URLCONF = 'workshop_twitter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + '/templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,8 +130,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'public')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-
-#directory for photos and stuff
-MEDIA_ROOT = '/media'
-
+#
+# #directory for photos and stuff
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 AUTH_USER_MODEL = 'twitter.TwitterUser'

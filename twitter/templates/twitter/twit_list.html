@@ -1,0 +1,13 @@
+{% extends 'twitter/base.html' %}
+
+{% block content %}
+
+    <h1>Twity</h1>
+    {% for twit in object_list %}
+        <p>{{ twit.content }}</p>
+        <p><em>{{ twit.user}} @ {{ twit.creation_date }}</em></p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}Twits{% endblock %}

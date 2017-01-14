@@ -1,0 +1,21 @@
+{% extends "twitter/base.html" %}
+
+{% block content %}
+    <h1>Messages recived:</h1>
+    {% for msg in object_list %}
+        <p>
+            {% if not msg.is_read %}<strong>{% endif %}
+            <a href="{% url 'message-details' msg.id %}">Od: {{ msg.sender }} @ {{ msg.creation_date }}</a>
+            {% if not msg.is_read %}</strong>{% endif %}
+        </p>
+        <hr>
+    {% endfor %}
+    <h1>Messages sent:</h1>
+    {% for msg in sender %}
+        <p><a href="{% url 'message-details' msg.id %}">Do: {{ msg.receiver }} @ {{ msg.creation_date }}</a></p>
+        <hr>
+    {% endfor %}
+    <a href="{% url 'message' %}"> New message.</a>
+{% endblock %}
+
+{% block title %}Twis{% endblock %}
